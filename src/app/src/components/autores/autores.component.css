@@ -1,0 +1,62 @@
+/* autores.component.css */
+
+.container {
+  margin-top: 20px;
+}
+
+h2.text-center {
+  margin-bottom: 20px;
+  color: light-dark(#333b3c, #efefec); /* Asegura el color del texto */
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: light-dark(#efedea, #2b303b); /* Fondo acorde al esquema */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.card-body {
+  padding: 20px;
+  color: light-dark(#333b3c, #efefec); /* Asegura el color del texto */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: light-dark(#333b3c, #efefec); /* Asegura el color del texto */
+}
+
+.card-text {
+  font-size: 1rem;
+  color: light-dark(#333b3c, #efefec); /* Asegura el color del texto */
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.page-link {
+  color: light-dark(#007bff, #90caf9); /* Color acorde al esquema */
+}
+
+.page-item.active .page-link {
+  background-color: light-dark(#007bff, #90caf9); /* Fondo acorde al esquema */
+  border-color: light-dark(#007bff, #90caf9); /* Borde acorde al esquema */
+}
+
+.page-item.disabled .page-link {
+  color: light-dark(#6c757d, #90caf9); /* Color acorde al esquema */
+}

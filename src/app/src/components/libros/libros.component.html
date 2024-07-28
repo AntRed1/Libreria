@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Libros</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row" *ngFor="let libro of libros">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ libro.titulo }}</h5>
+              <p class="card-text">
+                <strong>Autor:</strong> {{ libro.Nombres }}<br />
+                <strong>Título:</strong> {{ libro.titulo }}<br />
+                <strong>Notas:</strong> {{ libro.notas }}<br />
+                <strong>Precio:</strong> {{ libro.precio }}<br />
+                <strong>Fecha de Publicación:</strong> {{ libro.fecha_pub
+                }}<br />
+                <strong>Derechos:</strong> {{ libro.derechos }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" href="#" (click)="changePage(currentPage - 1)"
+              >Previous</a
+            >
+          </li>
+          <li
+            class="page-item"
+            *ngFor="let page of pages"
+            [class.active]="page === currentPage"
+          >
+            <a class="page-link" href="#" (click)="changePage(page)">{{
+              page
+            }}</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <a class="page-link" href="#" (click)="changePage(currentPage + 1)"
+              >Next</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

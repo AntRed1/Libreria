@@ -1,0 +1,192 @@
+<div class="d-flex flex-column min-vh-100">
+  <main class="flex-grow-1">
+    <article>
+      <section>
+        <div class="container">
+          <div class="row">
+            <!-- Columna para redes sociales de Anthony Rojas -->
+            <div class="container col-md-4 mb-5">
+              <h4>Redes Sociales</h4>
+              <hr />
+              <div class="col">
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#anthonyOffcanvas"
+                  aria-controls="anthonyOffcanvas"
+                >
+                  Anthony Rojas ⚡
+                </button>
+              </div>
+              <div
+                class="offcanvas offcanvas-start"
+                data-bs-backdrop="static"
+                tabindex="-1"
+                id="anthonyOffcanvas"
+                aria-labelledby="anthonyOffcanvasLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="anthonyOffcanvasLabel">
+                    Redes Sociales
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="list-unstyled social-media-list">
+                    <!-- Anthony Rojas -->
+                    <li class="alert alert-dark" role="alert">
+                      <h4>
+                        Anthony Rojas
+                        <img src="https://github.com/AntRed1.png" alt="photo" />
+                      </h4>
+                      <ul class="list-unstyled">
+                        <li>
+                          <a
+                            href="mailto:anthonyatras@gmail.com"
+                            target="_blank"
+                            aria-label="Correo Electrónico"
+                          >
+                            <i class="fa-solid fa-envelope"></i>
+                            Correo
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.linkedin.com/in/anthony-j-rojas-v-29b26a207/"
+                            target="_blank"
+                            aria-label="LinkedIn"
+                          >
+                            <i class="fa-brands fa-linkedin"></i>
+                            LinkedIn
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://github.com/AntRed1"
+                            target="_blank"
+                            aria-label="GitHub"
+                          >
+                            <i class="fa fa-github fs-3" aria-hidden="true"></i>
+                            GitHub
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="offcanvas offcanvas-start"
+                data-bs-backdrop="static"
+                tabindex="-1"
+                id="arisleidyOffcanvas"
+                aria-labelledby="arisleidyOffcanvasLabel"
+              ></div>
+            </div>
+
+            <!-- Columna para el formulario de contacto -->
+            <div class="col-md-8">
+              <h4>Dejar Comentarios</h4>
+              <form
+                id="comentarios-Form"
+                (submit)="Enviar($event)"
+                method="POST"
+              >
+                <!-- Nombre -->
+                <div class="mb-3">
+                  <label for="nombre" class="form-label"> Nombre </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    name="nombre"
+                    maxlength="50"
+                    minlength="1"
+                    required
+                  />
+                </div>
+
+                <!-- Apellidos -->
+                <div class="mb-3">
+                  <label for="apellidos" class="form-label"> Apellidos </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellidos"
+                    name="apellidos"
+                    maxlength="50"
+                    minlength="1"
+                    required
+                  />
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label"> Email </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    maxlength="50"
+                    minlength="1"
+                    required
+                  />
+                </div>
+
+                <!-- Comentarios -->
+                <div class="mb-3">
+                  <label for="comentarios" class="form-label">
+                    Comentarios
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="comentarios"
+                    name="comentarios"
+                    rows="4"
+                    maxlength="100"
+                    minlength="1"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Botón de enviar -->
+                <button type="submit" class="btn btn-primary">
+                  Enviar Comentario
+                </button>
+              </form>
+
+              <!-- Badge para la cantidad de comentarios -->
+              <div class="mt-4">
+                <button
+                  id="btnCargarComentarios"
+                  type="button"
+                  class="btn btn-primary position-relative"
+                  (click)="cargarComentarios()"
+                >
+                  Comentarios
+                  <span
+                    id="commentBadge"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  >
+                    0
+                    <span class="visually-hidden"> comentarios </span>
+                  </span>
+                </button>
+              </div>
+
+              <!-- Contenedor para los comentarios -->
+              <div id="comentariosContainer" class="mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</div>
