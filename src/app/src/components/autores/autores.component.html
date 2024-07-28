@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Autores</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let autor of paginatedAutores">
+          <div class="card h-100">
+            <img
+              [src]="autor.fotografia"
+              class="card-img-top"
+              alt="{{ autor.Nombres }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ autor.Nombres }}</h5>
+              <p class="card-text">
+                <strong>Dirección:</strong> {{ autor.direccion }}<br />
+                <strong>Ciudad:</strong> {{ autor.ciudad }}<br />
+                <strong>País:</strong> {{ autor.pais }}<br />
+                <strong>Código Postal:</strong> {{ autor.cod_postal }}<br />
+                <strong>Estado:</strong> {{ autor.estado }}<br />
+                <strong>Teléfono:</strong> {{ autor.telefono }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" href="#" (click)="changePage(currentPage - 1); $event.preventDefault()"
+              >Anterior</a
+            >
+          </li>
+          <li
+            class="page-item"
+            *ngFor="let page of totalPagesArray"
+            [class.active]="page === currentPage"
+          >
+            <a class="page-link" href="#" (click)="changePage(page); $event.preventDefault()">{{
+              page
+            }}</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <a class="page-link" href="#" (click)="changePage(currentPage + 1); $event.preventDefault()"
+              >Siguiente</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
